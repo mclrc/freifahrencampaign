@@ -4,10 +4,10 @@
   "bannerImage": "/img/another-banner.jpg",
   "de": {
     "title": "Eine andere Seite",
-    "mdxPath": "another-page.de.mdx"
+    "mdxPath": "another-page.de.de.mdx"
   },
   "en": {
     "title": "Another Page",
-    "mdxPath": "another-page.en.mdx"
+    "mdxPath": "another-page.en.en.mdx"
   }
-} 
+}
