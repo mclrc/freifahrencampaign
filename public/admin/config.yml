@@ -15,6 +15,7 @@ collections:
       preview: false
     fields:
       - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Position", name: "position", widget: "number", required: false }
       - {
           label: "Banner",
           name: "bannerImage",
@@ -51,7 +52,7 @@ collections:
     create: true
     extension: "mdx"
     format: "frontmatter"
-    slug: "{{fields.title}}"
+    slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
