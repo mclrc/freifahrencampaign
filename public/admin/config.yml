@@ -32,7 +32,7 @@ collections:
             widget: "relation"
             collection: "mdx_content"
             searchFields: ["title"]
-            valueField: "{{slug}}.{{extension}}"
+            valueField: "{{slug}}.de.{{extension}}"
             displayFields: ["title"]
       - label: "English"
         name: "en"
@@ -44,7 +44,7 @@ collections:
             widget: "relation"
             collection: "mdx_content"
             searchFields: ["title"]
-            valueField: "{{slug}}.{{extension}}"
+            valueField: "{{slug}}.en.{{extension}}"
             displayFields: ["title"]
   - name: "mdx_content"
     label: "MDX Content"
@@ -52,7 +52,9 @@ collections:
     create: true
     extension: "mdx"
     format: "frontmatter"
-    slug: "{{slug}}"
+    slug: "{{slug}}.{{language}}"
     fields:
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Language", name: "language", widget: "string" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
