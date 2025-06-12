@@ -11,7 +11,7 @@ export default async function LanguageLayout({
   params,
 }: {
   children: React.ReactNode
-  params: { lang: 'de' | 'en' }
+  params: Promise<{ lang: 'de' | 'en' }>
 }) {
   const { lang } = await params
 

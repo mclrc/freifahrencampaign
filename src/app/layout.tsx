@@ -7,15 +7,16 @@ export const metadata: Metadata = {
   description: "Ferien mitten drin - in der Natur, der Kultur, im provençalischen Marktgeschehen von Buis les Baronnies",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }>) {
+  const { lang } = await params
   return (
-    <html lang={params.lang ?? 'de'}>
+    <html lang={lang ?? 'de'}>
       <body
         className="antialiased"
       >

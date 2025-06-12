@@ -3,10 +3,10 @@ import ContentPage from '@/components/ContentPage'
 import { notFound } from 'next/navigation'
 
 interface PageProps {
-  params: { 
+  params: Promise<{ 
     lang: 'de' | 'en'
     slug: string 
-  }
+  }>
 }
 
 export async function generateStaticParams() {
@@ -24,7 +24,7 @@ export async function generateStaticParams() {
   return params
 }
 
-export default async function Page({ params }: PageProps) {
+export default async function Page({params}: PageProps) {
   const { lang, slug } = await params
 
   if (!['de', 'en'].includes(lang)) {
