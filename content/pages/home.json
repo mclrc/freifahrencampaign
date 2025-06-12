@@ -4,10 +4,10 @@
   "bannerImage": "/img/default-banner.jpg",
   "de": {
     "title": "Start",
-    "mdxPath": "home.de.de.mdx"
+    "mdxPath": "home.de.mdx"
   },
   "en": {
     "title": "Home",
-    "mdxPath": "home.en.en.mdx"
+    "mdxPath": "home.en.mdx"
   }
 }
