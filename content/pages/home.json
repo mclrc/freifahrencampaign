@@ -1,0 +1,13 @@
+{
+  "slug": "home",
+  "position": 1,
+  "bannerImage": "/img/default-banner.jpg",
+  "de": {
+    "title": "Startseite",
+    "mdxPath": "home.de.mdx"
+  },
+  "en": {
+    "title": "Home Page",
+    "mdxPath": "home.en.mdx"
+  }
+} 

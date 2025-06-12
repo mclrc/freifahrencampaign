@@ -1,0 +1,57 @@
+backend:
+  name: git-gateway
+
+media_folder: public/img
+public_folder: /img
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages"
+    format: "json"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Slug", name: "slug", widget: "string" }
+      - {
+          label: "Banner",
+          name: "bannerImage",
+          widget: "image",
+          required: false,
+        }
+      - label: "German"
+        name: "de"
+        widget: "object"
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - label: "MDX-Pfad"
+            name: "mdxPath"
+            widget: "relation"
+            collection: "mdx_content"
+            searchFields: ["title"]
+            valueField: "{{slug}}.{{extension}}"
+            displayFields: ["title"]
+      - label: "English"
+        name: "en"
+        widget: "object"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - label: "MDX Path"
+            name: "mdxPath"
+            widget: "relation"
+            collection: "mdx_content"
+            searchFields: ["title"]
+            valueField: "{{slug}}.{{extension}}"
+            displayFields: ["title"]
+  - name: "mdx_content"
+    label: "MDX Content"
+    folder: "content/mdx"
+    create: true
+    extension: "mdx"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }

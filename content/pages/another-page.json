@@ -1,0 +1,13 @@
+{
+  "slug": "another-page",
+  "position": 2,
+  "bannerImage": "/img/another-banner.jpg",
+  "de": {
+    "title": "Eine andere Seite",
+    "mdxPath": "another-page.de.mdx"
+  },
+  "en": {
+    "title": "Another Page",
+    "mdxPath": "another-page.en.mdx"
+  }
+} 

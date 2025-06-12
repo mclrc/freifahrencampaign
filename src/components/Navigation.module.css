@@ -1,0 +1,207 @@
+.navbar {
+  position: sticky;
+  user-select: none;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  background-color: white;
+  font-family: 'trebuchet ms', sans-serif;
+}
+
+.navbar.scrolled,
+.navbar:not(.collapsed) {
+  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.navbar nav {
+  padding: 0 var(--content-padding);
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.top {
+  height: var(--navbar-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.hamburgerMenu div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.routeName {
+  font-size: 1rem;
+  font-weight: 600;
+  /* margin-right: 1rem; */
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  outline: none;
+  position: relative;
+  height: 1.1rem;
+  width: 2rem;
+  padding: 1rem;
+  box-sizing: content-box;
+  margin: 0;
+  margin-right: calc(-1 * var(--content-padding));
+  cursor: pointer;
+}
+
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 4px;
+  width: 2rem;
+  background-color: black;
+  transition: 0.3s;
+  transform-origin: 51% 51%;
+}
+
+.hamburger::before {
+  top: 1rem;
+}
+
+.hamburger::after {
+  bottom: 1rem;
+}
+
+.navbar:not(.collapsed) .hamburger::before {
+  top: calc(50% - 2px);
+  transform: rotate(225deg);
+}
+
+.navbar:not(.collapsed) .hamburger::after {
+  bottom: calc(50% - 2px);
+  transform: rotate(-225deg);
+}
+
+.navbar.collapsed .links {
+  height: 0;
+}
+
+.navbar.collapsed .links a {
+  opacity: 0;
+}
+
+.links {
+  transition: 0.2s;
+  height: 35vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--content-padding);
+}
+
+.links a {
+  transition: 0.2s;
+  margin: 0.3rem 0;
+  display: block;
+  color: var(--text-color);
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+}
+
+.links a::after {
+  transition: 0.3s;
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0 auto;
+  transition: 0.2s;
+  bottom: -3px;
+  height: 3px;
+  opacity: 0;
+}
+
+.link:hover::after {
+  background-color: var(--text-color);
+  opacity: 1;
+}
+
+.link.active::after {
+  background-color: var(--accent-color);
+  opacity: 1;
+}
+
+.languageSwitcher a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-color) !important;
+}
+
+/* Language text - visible on mobile, hidden on desktop */
+.languageText {
+  display: inline;
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .top {
+    width: auto;
+  }
+  
+  .hamburgerMenu {
+    display: none;
+  }
+  
+  .navbar.collapsed .links,
+  .navbar:not(.collapsed) .links {
+    padding: 0;
+    height: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .navbar.collapsed .links a,
+  .navbar:not(.collapsed) .links a {
+    opacity: 1;
+  }
+  
+  .links li:not(:last-child) {
+    margin-right: 1.5rem;
+  }
+  
+  .languageSwitcher {
+    margin-left: auto;
+  }
+  
+  /* Desktop flag styling - larger size, no margins */
+  .languageSwitcher a {
+    font-size: 1.5rem;
+    margin-left: 0;
+    padding: 0;
+    line-height: 1;
+  }
+  
+  /* Hide language text on desktop - show only flags */
+  .languageText {
+    display: none;
+  }
+} 

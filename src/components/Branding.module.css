@@ -1,0 +1,43 @@
+.branding {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'trebuchet ms', sans-serif;
+    line-height: 1.1;
+}
+
+.logo {
+    height: 3rem
+}
+
+.textWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: #666;
+}
+
+@media screen and (min-width: 600px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        margin-left: 1rem;
+    }
+
+    .logo {
+        height: 3.5rem
+    }
+}
