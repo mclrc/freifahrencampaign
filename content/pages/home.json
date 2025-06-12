@@ -3,11 +3,11 @@
   "position": 1,
   "bannerImage": "/img/default-banner.jpg",
   "de": {
-    "title": "Startseite",
-    "mdxPath": "home.de.mdx"
+    "title": "Start",
+    "mdxPath": "home.de.de.mdx"
   },
   "en": {
-    "title": "Home Page",
-    "mdxPath": "home.en.mdx"
+    "title": "Home",
+    "mdxPath": "home.en.en.mdx"
   }
-} 
+}
