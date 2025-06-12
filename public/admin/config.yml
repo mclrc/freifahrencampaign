@@ -10,7 +10,7 @@ collections:
     folder: "content/pages"
     format: "json"
     create: true
-    slug: "{{slug}}"
+    slug: "{{fields.slug}}"
     editor:
       preview: false
     fields:
@@ -51,7 +51,7 @@ collections:
     create: true
     extension: "mdx"
     format: "frontmatter"
-    slug: "{{slug}}"
+    slug: "{{fields.title}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
