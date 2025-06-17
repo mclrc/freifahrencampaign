@@ -3,18 +3,34 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './CountingAnimation.module.css';
 
+const formatNumber = (number: number, prefix?: string, postfix?: string, abbreviate?: boolean) => {
+  if (abbreviate) {
+    const abbreviations = ['', 'K', 'M', 'B', 'T'];
+    const abbreviationIndex = Math.floor(Math.log10(number) / 3);
+    const abbreviatedNumber = number / Math.pow(10, abbreviationIndex * 3);
+    return `${prefix}${abbreviatedNumber.toFixed(1)}${abbreviations[abbreviationIndex]}${postfix}`;
+  }
+  return `${prefix}${number.toLocaleString()}${postfix}`;
+};
+
 interface CountingAnimationProps {
   targetNumber: number;
+  prefix?: string;
   postfix?: string;
+  abbreviate?: boolean;
   duration?: number;
-  subtitle: string;
+  topText: string;
+  bottomText: string;
 }
 
 const CountingAnimation: React.FC<CountingAnimationProps> = ({
   targetNumber,
+  prefix = '',
   postfix = '',
+  abbreviate = false,
   duration = 2000,
-  subtitle,
+  topText,
+  bottomText,
 }) => {
   const [currentNumber, setCurrentNumber] = useState(0);
   const animationFrameId = useRef<number | null>(null);
@@ -65,11 +81,11 @@ const CountingAnimation: React.FC<CountingAnimationProps> = ({
 
   return (
     <div className={styles.container} ref={nodeRef}>
+      <div className={styles.topText}>{topText}</div>
       <div className={styles.number}>
-        {currentNumber.toLocaleString()}
-        {postfix}
+        {formatNumber(currentNumber, prefix, postfix, abbreviate)}
       </div>
-      <div className={styles.subtitle}>{subtitle}</div>
+      <div className={styles.bottomText}>{bottomText}</div>
     </div>
   );
 };

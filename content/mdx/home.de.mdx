@@ -5,4 +5,13 @@ title: Home DE
 ---
 Willkommen auf der deutschen Startseite. Hier ist ein Zähler:
 
-<Counter /> 
+<div className="responsive-row">
+<CountingAnimation targetNumber={30000} abbreviate postfix="+" topText="Pro Jahr" bottomText="Ersatzfreiheitsstrafen" /> 
+<CountingAnimation targetNumber={30000 * 30 * 200} abbreviate prefix=">" postfix="€" topText="Das Kostet" bottomText="an Steuergeldern" /> 
+</div>
+
+Das ganze entspricht
+<div className="responsive-row">
+<CountingAnimation targetNumber={30000 * 30 * 200 / 64} abbreviate prefix="~" postfix="" bottomText="Deutschlandtickets" /> 
+<CountingAnimation targetNumber={30000 * 30 * 200 / 40000} abbreviate prefix="~" postfix="" bottomText="Lehrerjahresgehältern" /> 
+</div>
