@@ -3,8 +3,8 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
-  title: "Deleau Buis - Ferienwohnung in der Provence",
-  description: "Ferien mitten drin - in der Natur, der Kultur, im provençalischen Marktgeschehen von Buis les Baronnies",
+  title: "Freifahren e.V.",
+  description: "Kampagne für die Abschaffung der Ersatzfreiheitsstrafe und kostenlosen ÖPNV",
 };
 
 export default async function RootLayout({

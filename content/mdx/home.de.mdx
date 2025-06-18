@@ -3,15 +3,20 @@ slug: home
 language: de
 title: Home DE
 ---
-Willkommen auf der deutschen Startseite. Hier ist ein Zähler:
-
+# Weg mit der Ersatzfreiheitsstrafe!
+In Deutschland werden täglich Menschen eingesperrt – nicht weil sie schwere Verbrechen begangen haben, sondern weil sie arm sind. Wer sich Essen, warme Kleidung oder eine Fahrkarte nicht leisten kann und deshalb stiehlt, wird mit Geldstrafen belegt. Kann er diese nicht zahlen, wandert er hinter Gitter. So werden aus Verzweiflungstaten Gefängnisstrafen, aus sozialen Problemen Kriminalität gemacht. Besonders hart trifft es die Schwächsten unserer Gesellschaft: obdachlose Menschen, Suchtkranke, psychisch Erkrankte – Menschen, die Hilfe brauchen, nicht Bestrafung.
 <div className="responsive-row">
-<CountingAnimation targetNumber={30000} abbreviate postfix="+" topText="Pro Jahr" bottomText="Ersatzfreiheitsstrafen" /> 
-<CountingAnimation targetNumber={30000 * 30 * 200} abbreviate prefix=">" postfix="€" topText="Das Kostet" bottomText="an Steuergeldern" /> 
+<CountingAnimation targetNumber={56000} prefix=">" topText="Pro Jahr" bottomText="Ersatzfreiheitsstrafen" duration={5000}/> 
+<CountingAnimation targetNumber={56000 * 30 / 365} prefix=">" postfix=" Jahre" topText="Insgesamt" bottomText="Haftzeit" duration={7000}/> 
 </div>
-
-Das ganze entspricht
+Lieber investiert der Staat Abermillionen in die Bestrafung von Armut als in ihre Bekämpfung. Ein kaputtes System, das Menschen abstraft statt ihnen zu helfen, das Probleme verschärft statt sie zu lösen. Während echte Hilfe unterfinanziert bleibt, fließt das Geld in Gefängniszellen für die Ärmsten. Diese Zahlen offenbaren die Prioritäten dieses Systems:
+<CountingAnimation targetNumber={56000 * 30 * 200} abbreviate prefix=">" postfix=" €" bottomText="Haftkosten" duration={8000} /> 
+<span style={{ textAlign: 'center', display: 'block', margin: '1rem 0' }}>Das entspricht</span>
 <div className="responsive-row">
-<CountingAnimation targetNumber={30000 * 30 * 200 / 64} abbreviate prefix="~" postfix="" bottomText="Deutschlandtickets" /> 
-<CountingAnimation targetNumber={30000 * 30 * 200 / 40000} abbreviate prefix="~" postfix="" bottomText="Lehrerjahresgehältern" /> 
+<CountingAnimation targetNumber={56000 * 30 * 200 / 64} abbreviate prefix=">" topText=" " bottomText="Deutschlandtickets" duration={8000} /> 
+<CountingAnimation targetNumber={56000 * 30 * 200 / 40000} abbreviate prefix=">" topText=" " bottomText="Lehrerjahresgehälter" duration={9000} /> 
+</div>
+<div className="responsive-row" style={{marginTop: '2rem'}}>
+<CountingAnimation targetNumber={56000 * 30 * 200 / 2} abbreviate prefix=">" bottomText="Tafelmahlzeiten" duration={9000} /> 
+<CountingAnimation targetNumber={56000 * 30 * 200 / (800 * 12)} abbreviate prefix=">" postfix=" Jahre" topText="" bottomText="Durchschnittsmiete" duration={8000} /> 
 </div>

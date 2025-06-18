@@ -5,12 +5,17 @@ import styles from './CountingAnimation.module.css';
 
 const formatNumber = (number: number, prefix?: string, postfix?: string, abbreviate?: boolean) => {
   if (abbreviate) {
-    const abbreviations = ['', 'K', 'M', 'B', 'T'];
+    const abbreviations = ['', 'Tsd.', 'Mio.', 'Mrd.'];
     const abbreviationIndex = Math.floor(Math.log10(number) / 3);
     const abbreviatedNumber = number / Math.pow(10, abbreviationIndex * 3);
-    return `${prefix}${abbreviatedNumber.toFixed(1)}${abbreviations[abbreviationIndex]}${postfix}`;
+    return `${prefix}${abbreviatedNumber.toFixed(1)} ${abbreviations[abbreviationIndex]}${postfix}`;
   }
   return `${prefix}${number.toLocaleString()}${postfix}`;
+};
+
+// Ease-in-ease-out function for smooth animation
+const easeInOut = (t: number): number => {
+  return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 };
 
 interface CountingAnimationProps {
@@ -60,7 +65,8 @@ const CountingAnimation: React.FC<CountingAnimationProps> = ({
 
       const elapsedTime = timestamp - startTime.current;
       const progress = Math.min(elapsedTime / duration, 1);
-      const value = Math.floor(progress * targetNumber);
+      const easedProgress = easeInOut(progress);
+      const value = Math.floor(easedProgress * targetNumber);
 
       setCurrentNumber(value);
 
