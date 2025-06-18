@@ -92,7 +92,7 @@ export default function Navigation({ currentLanguage, navItems, altNavItems }: N
       <nav>
         <div className={styles.top}>
           <header className={styles.branding}>
-            <Branding />
+            <Branding language={currentLanguage} />
           </header>
           <div className={styles.hamburgerMenu}>
             <div>
